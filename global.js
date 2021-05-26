@@ -16,7 +16,7 @@ var cleanName = function (str) {
     .trim();
 };
 
-function htmlDecode(input) {
+var htmlDecode = function (input) {
   var doc = new DOMParser().parseFromString(input, "text/html");
   return doc.documentElement.textContent;
-}
+};
