@@ -18,7 +18,13 @@ Webflow.push(function () {
       $logo.attr("src", "https://uploads-ssl.webflow.com/603e8caef70bd86255288414/60907930b0d5a66f31e930c5_logo-light.png");
     }
   });
+
+  if ($("#datepicker").length) {
+    $("#datepicker").datepicker();
+  }
 });
+
+loadScript("https://code.jquery.com/ui/1.12.1/jquery-ui.js");
 
 var cleanName = function (str) {
   if (!str) {
@@ -36,3 +42,10 @@ var htmlDecode = function (input) {
   var doc = new DOMParser().parseFromString(input, "text/html");
   return doc.documentElement.textContent;
 };
+
+function loadScript(src) {
+  let script = document.createElement("script");
+  script.src = src;
+  script.async = false;
+  document.body.append(script);
+}
