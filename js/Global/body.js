@@ -42,10 +42,3 @@ var htmlDecode = function (input) {
   var doc = new DOMParser().parseFromString(input, "text/html");
   return doc.documentElement.textContent;
 };
-
-function loadScript(src) {
-  let script = document.createElement("script");
-  script.src = src;
-  script.async = false;
-  document.body.append(script);
-}
